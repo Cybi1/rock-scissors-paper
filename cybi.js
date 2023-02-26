@@ -12,17 +12,17 @@ function gethumanChoice() {
   return prompt("your choice:");
 }
 
-function humanWin(computerValue, humanValue) {
+function checkHumanWin(computerValue, humanValue) {
   return (
-  (computerValue === SCISSORS && humanValue === ROCK) ||
-  (computerValue === ROCK && humanValue === PAPER) ||
-  (computerValue === PAPER && humanValue === SCISSORS)
+    (computerValue === SCISSORS && humanValue === ROCK) ||
+    (computerValue === ROCK && humanValue === PAPER) ||
+    (computerValue === PAPER && humanValue === SCISSORS)
   );
 }
 
 function play(computerValue, humanValue) {
   if (computerValue === humanValue) return("draw");
-  if (humanWin(computerValue, humanValue)) return ("win");
+  if (checkHumanWin(computerValue, humanValue)) return ("win");
 
   return ("lose");
 }
